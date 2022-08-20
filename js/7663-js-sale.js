@@ -20,8 +20,8 @@ const getTokens2 = async (e)=> {
     	if (account.length > 0) {
   	  		const web3 = new Web3(window.ethereum);
   	  		contract2 = new web3.eth.Contract(ABI, CONTRACT, {gas: 30000000});
-			var userTokens = await contract2.methods.walletOfOwner("0xA275Bba7Aa605183EB78c74FF90318Ce384BCF75").call();
-			var userBalance = await contract2.methods.balanceOf("0xA275Bba7Aa605183EB78c74FF90318Ce384BCF75").call();
+			var userTokens = await contract2.methods.walletOfOwner(account).call();
+			var userBalance = await contract2.methods.balanceOf(account).call();
 
 			tokensArray = Array.from(userTokens);
 
